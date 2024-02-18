@@ -25,6 +25,26 @@ public class subset {
     }
 
     private static void generateSubset(int cnt) {
+        if(cnt == N) {
+            int sum = 0, selectedCnt = 0;
+            for(int i=0; i<N; i++) {
+                if(isSelected[i]) {
+                    sum += input[i];
+                    selectedCnt++;
+                }
+            }
+
+            if(sum == S && selectedCnt > 0) {
+                ++totalCnt;
+                for(int i=0; i<N; i++) {
+                    if(isSelected[i]) {
+                        System.out.print(input[i] + "\t");
+                    }
+                    System.out.println();
+                }
+            }
+            return;
+        }
 
         // 선택
         isSelected[cnt] = true;
