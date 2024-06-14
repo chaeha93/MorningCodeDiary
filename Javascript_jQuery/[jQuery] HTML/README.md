@@ -11,4 +11,6 @@
 - `remove`: 선택한 요소와 그 자식 요소들을 완전히 제거
 
 ## Dom Demo
-![DOM.png](DOM.png)
+![Add_Remove.png](../img/Add_Remove.png)
+- [jQuery - Add Elements](https://www.w3schools.com/jquery/jquery_dom_add.asp)
+- [jQuery - Remove Elements](https://www.w3schools.com/jquery/jquery_dom_remove.asp)
