@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery DOM Manipulation Demo</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        #container {
+            border: 1px solid #000;
+            padding: 10px;
+            margin: 20px 0;
+        }
+
+        button {
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <h1>jQuery DOM Manipulation Demo</h1>
+    <div>
+        <button id="btn-before">before</button>
+        <button id="btn-after">after</button>
+        <button id="btn-append">append</button>
+        <button id="btn-prepend">prepend</button>
+        <button id="btn-empty">empty</button>
+        <button id="btn-remove">remove</button>
+    </div>
+    <div id="container">
+        <p>기존 내용</p>
+    </div>
+
+    <script>
+        $(document).ready(function () {
+            $('#btn-before').click(function () {
+                $('#container').before('<p>새로운 내용이 앞에 추가되었습니다.</p>');
+            });
+            $('#btn-after').click(function () {
+                $('#container').after('<p>새로운 내용이 뒤에 추가되었습니다.</p>');
+            });
+            $('#btn-append').click(function () {
+                $('#container').append('<p>새로운 내용이 뒤에 추가되었습니다.</p>');
+            });
+            $('#btn-prepend').click(function () {
+                $('#container').prepend('<p>새로운 내용이 앞에 추가되었습니다.</p>');
+            });
+            $('#btn-empty').click(function () {
+                $('#container').empty();
+            });
+            $('#btn-remove').click(function () {
+                $('#container').remove();
+            });
+        });
+    </script>
+</body>
+</html>
