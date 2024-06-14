@@ -33,16 +33,16 @@
     <script>
         $(document).ready(function () {
             $('#btn-before').click(function () {
-                $('#container').before('<p>새로운 내용이 앞에 추가되었습니다.</p>');
+                $('#container').before('<p>(before)새로운 내용이 앞에 추가되었습니다.</p>');
             });
             $('#btn-after').click(function () {
-                $('#container').after('<p>새로운 내용이 뒤에 추가되었습니다.</p>');
+                $('#container').after('<p>(after)새로운 내용이 뒤에 추가되었습니다.</p>');
             });
             $('#btn-append').click(function () {
-                $('#container').append('<p>새로운 내용이 뒤에 추가되었습니다.</p>');
+                $('#container').append('<p>(append)새로운 내용이 뒤에 추가되었습니다.</p>');
             });
             $('#btn-prepend').click(function () {
-                $('#container').prepend('<p>새로운 내용이 앞에 추가되었습니다.</p>');
+                $('#container').prepend('<p>(prepend)새로운 내용이 앞에 추가되었습니다.</p>');
             });
             $('#btn-empty').click(function () {
                 $('#container').empty();
