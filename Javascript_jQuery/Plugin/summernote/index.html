@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Summernote Lite Demo</title>
+  <!-- jQuery (Summernote Lite 의존성) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <!-- Summernote Lite CSS -->
+  <script src="./summernote-lite.js"></script>
+  <script src="./lang/summernote-ko-KR.js"></script>
+  <link rel="stylesheet" href="./summernote-lite.css">
+</head>
+<body>
+  <h1>Summernote Lite Demo</h1>
+  <textarea name="summernote" id="summernote" maxlength="10000" cols="30" rows="5" placeholder="내용을 입력해주세요" class="with-border"></textarea>
+
+<script>
+  $(document).ready(function() {
+    $('#summernote').summernote({
+      height: 300, // 에디터 높이
+      minHeight: null, // 최소 높이
+      maxHeight: null, // 최대 높이
+      focus: true, // 에디터 로딩후 포커스를 맞출지 여부
+      lang: "ko-KR", // 한글 설정
+      dialogsInBody: true, // 이미지 업로드, 링크 삽입 등의 팝업창
+      placeholder: '내용을 입력하세요.', //placeholder 설정
+      callbacks : {
+        onInit: function() {
+          // Summernote가 초기화된 후 이미지 삽입 다이얼로그를 엽니다
+          $('#summernote').summernote('showImageDialog');
+        },
+        onImageUpload: function (files) {
+          var maxSize = 1 * 1024 * 1024; // limit = 1MB
+          var isMaxSize = false;
+          var maxFile = null;
+
+          for (var i = 0; i < files.length; i++) {
+            if (files[i].size > maxSize) {
+              isMaxSize = true;
+              maxFile = files[i].name;
+              break;
+            }
+          }
+          if (isMaxSize) { // 사이즈 제한에 걸렸을 때
+            alert('[' + maxFile + '] 파일이 업로드 용량(1MB)을 초과하였습니다.');
+            return;
+          } else {
+            for (var i = 0; i < files.length; i++) {
+              var formData = new FormData();
+              formData.append("file", files[i]);
+              $('#summernote').summernote('insertImage', URL.createObjectURL(files[i]));
+            }
+          }
+        }
+      },
+      toolbar: [
+        // [groupName, [list of button]]
+        ['fontname', ['fontname']],
+        ['fontsize', ['fontsize']],
+        ['color', ['color']],
+        ['style', ['bold', 'italic', 'underline','strikethrough', 'clear']],
+        ['para', ['ul', 'ol', 'paragraph']],
+        ['height', ['height']],
+        ['insert',['picture','link']]
+      ],
+      fontNames: ['Arial', 'Arial Black', 'Comic Sans MS', 'Courier New','맑은 고딕','궁서','굴림체','굴림','돋움체','바탕체'],
+      fontSizes: ['8','9','10','11','12','14','16','18','20','22','24','28','30','36','50','72']
+    });
+
+    function convertToBase64AndInsert(file, editor) {
+      var reader = new FileReader();
+      reader.onloadend = function() {
+        var base64data = reader.result;
+        $(editor).summernote('insertImage', base64data, file.name);
+      };
+      reader.readAsDataURL(file);
+    }
+  });
+</script>
+</body>
+</html>
