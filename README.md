@@ -1,4 +1,4 @@
-# Welcome Chaeha's Demo
+# Welcome to Chaeha's Demo
 
 ## 1. Algorithms
 - recursive / subset / stack  
