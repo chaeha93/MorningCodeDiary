@@ -38,7 +38,7 @@
 }
 ```
 ## summernote-lite Demo
-![Summernote_gif.gif](../img/Summernote_gif.gif)  
+![Summernote_gif](https://github.com/chaeha93/MorningCodeDiary/assets/57698563/91604564-5763-4bb1-b3e9-9c5680e1ad26) 
 
 ## References
 - [summernote.org](https://summernote.org/getting-started/#basic-api)
