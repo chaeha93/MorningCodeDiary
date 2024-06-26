@@ -1,6 +1,6 @@
 # Welcome to Chaeha's Demo
 
-## 1. Algorithms
+## 1. Java Algorithms
 - recursive / subset / stack  
 
 ## 2. Javascript / jQuery
