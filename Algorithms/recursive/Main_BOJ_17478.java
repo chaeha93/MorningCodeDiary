@@ -2,6 +2,10 @@ package recursive;
 
 import java.io.*;
 
+/*
+* BOJ 17478: 재귀함수가 뭔가요?
+*/
+
 public class Main_BOJ_17478 {
 
     public static StringBuilder sb = new StringBuilder();
