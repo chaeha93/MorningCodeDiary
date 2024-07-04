@@ -3,6 +3,10 @@ package stack;
 import java.io.*;
 import java.util.*;
 
+/*
+ * BOJ 10828: 스택
+ */
+
 public class Main_BOJ_10828 {
     public static void main(String[] args) throws Exception {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
